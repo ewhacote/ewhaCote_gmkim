@@ -1,4 +1,12 @@
-def solution(expression): 
+"""
+Programmers 67257 수식 최대화
+문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/67257
+"""
+
+import sys
+input = sys.stdin.readline
+
+def solution(expression):
   operations = [('+', '-', '*'),('+', '*', '-'),('-', '+', '*'),('-', '*', '+'),('*', '+', '-'),('*', '-', '+')] 
   answer = [] 
   
@@ -13,3 +21,9 @@ def solution(expression):
     answer.append(abs(eval(a.join(temp_list)))) 
       
   return max(answer)
+
+if __name__ == "__main__":
+
+    expression = str(input())
+
+    print(solution(expression))
